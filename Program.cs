@@ -1,63 +1,64 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//string line;
-
-//Console.WriteLine("Szia, Vilag!"); // kiírás konzol képernyőre (a Console oszály statikus WriteLine metódusa)
-
-/*line = Console.ReadLine(); // Sor beolvasása
-Console.WriteLine(line);  // A beolvasott sor kiírása
-
-Console.Write(line);
-
-Console.WriteLine("Nyomj le egy billentyűt!");
-Console.ReadKey();*/
+/* Elso orai program
+ * Developed by Gabor FACSKO (facsko.gabor@uni-milton.hu)
+ * Milton Friedman University, Budapest, Hungary, 2022 
+ */
 
 /*
-int n = 0;
-byte b = 0;
-string str = "szoveg";
-char c = 'c';
-bool l = false;
+string line = ""; // Ez a beolvasando sor szoveges valtozoja
 
-Console.WriteLine(n);
-Console.WriteLine(b);
+Console.WriteLine("Szia, Vilag!"); // Kiiras*/
 
-Console.WriteLine(str);
-Console.WriteLine(str[3]); // A szamozas 0-tol kezdodik.
-Console.WriteLine(c);
+// Pelda a ReadLine() metodusra
+/*Console.WriteLine("Irjon be egy szoveget ls nyomjon ENTER-t!");  // Kezelesi utasitas
+line = Console.ReadLine(); // Sor beolvasara
+//Console.WriteLine(line); // Teljesen felesleges barbarizmus (a beolvasott valtozo kiirasa) */
 
-Console.WriteLine(l);
+// Pelda ReadKey() metodusra
+/*Console.WriteLine("Nyomjon le egy billentyut!");  // Kezelesi utasitas
+Console.ReadKey();  // Beker egy billentyut */
 
-Console.WriteLine(sizeof(int)); // Wikipédia
+// Pelda a Write() metodusra
+/*Console.Write("Teszt");
+Console.Write("Teszt2");*/
 
-int j, k, m;
+/*int n; // n valtozo, egesz
 
-j = 1;
-k = 2;
-//m = 3;
+n = 0;*/
 
-Console.WriteLine(j);
+int n = 0;   // Egesz valtozo ertekadassal
+byte b = 0;  // byte ertekadassal
+
+// Egesz szam kiirasa
+Console.Write("Egész változó: "); Console.WriteLine(n);
+// Byte tipusu valtozo kiirasa
+Console.Write("Byte változó: "); Console.WriteLine(b);
+
+double r = 1.41; // Valos szam ertekadassal
+
+// Lebegopontos valtozo kiirasa
+Console.Write("Lebegőpontos változó: "); Console.WriteLine(r);
+
+char c = 't';  // Karakter
+string str = "Szöveg"; // Szoveg
+
+// Karakter kiirasa
+Console.Write("Karakter: "); Console.WriteLine(c);
+// String kiirasa
+Console.Write("Szoveg/string: "); Console.WriteLine(str);
+// A string egy elemenek kiirasa
+Console.Write("Karakter: "); Console.WriteLine(str[3]); 
+
+bool l, k;  // Logikai változok
+l = false;
+k = true;
+
+// Logikai valtozok kiirasa
+Console.Write("Boolean/logikai változók: "); 
+Console.Write(l);
+Console.Write(" ");
 Console.WriteLine(k);
-//Console.WriteLine(m);
 
-//float j = 1.2;
-
-*/
-
-/*string str = "vege";
-
-Console.WriteLine("eleje, " + str);*/
-
-//int n = "szoveg";
-//int n = 1.4;
-
-int n = 137;
-
-Console.WriteLine(n % 42);
-
-Console.WriteLine(n == 43);
-Console.WriteLine(n > 43);
-Console.WriteLine(n < 43);
-Console.WriteLine(n <= 43);
-
-if (n > 42 && n == 137)
-    Console.WriteLine("Nagyobb");
+// Pelda szoveg összefuzesere
+Console.Write("Szöveg változó: "); Console.WriteLine(str);
+Console.WriteLine(str + " még szöveg");
