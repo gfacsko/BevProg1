@@ -1,145 +1,298 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//string line;
+/* Bevezetés a programozásba példaprogramok C#-ban
+ * MicroSoft Visual Studio fejlesztőkörnyezettel
+ * 
+ * Developed by Gabor FACSKO (facsko.gabor@uni-milton.hu)
+ * Milton Friedman University, Budapest, Hungary, 2022
+ */
+/*
+ * string line = "aaa"; // Ebbe a változóba olvassa majd be a sort
 
-//Console.WriteLine("Szia, Vilag!"); // kiírás konzol képernyőre (a Console oszály statikus WriteLine metódusa)
+Console.WriteLine("Szia, Világ!"); // Kiírja a szöveget
+*/
 
 /*line = Console.ReadLine(); // Sor beolvasása
+
 Console.WriteLine(line);  // A beolvasott sor kiírása
 
 Console.Write(line);
+Console.WriteLine("vege");*/
 
+/*
 Console.WriteLine("Nyomj le egy billentyűt!");
-Console.ReadKey();*/
-
-/*
-int n = 0;
-byte b = 0;
-string str = "szoveg";
-char c = 'c';
-bool l = false;
-
-Console.WriteLine(n);
-Console.WriteLine(b);
-
-Console.WriteLine(str);
-Console.WriteLine(str[3]); // A szamozas 0-tol kezdodik.
-Console.WriteLine(c);
-
-Console.WriteLine(l);
-
-Console.WriteLine(sizeof(int)); // Wikipédia
-
-int j, k, m;
-
-j = 1;
-k = 2;
-//m = 3;
-
-Console.WriteLine(j);
-Console.WriteLine(k);
-//Console.WriteLine(m);
-
-//float j = 1.2;
-
+Console.ReadKey();
 */
 
-/*string str = "vege";
+// Egész típusú változó definíciója
+//int n = 0;
+// Értékadás
+// n = 0;
 
-Console.WriteLine("eleje, " + str);*/
+// Több változó deklaráslása egy sorban
+// int k, l;
 
-//int n = "szoveg";
-//int n = 1.4;
-
-//int n = 137;
-
-/*Console.WriteLine(n % 42);
-
-Console.WriteLine(n == 43);
-Console.WriteLine(n > 43);
-Console.WriteLine(n < 43);
-Console.WriteLine(n <= 43);
-
-if (n > 42 && n == 137)
-    Console.WriteLine("Nagyobb");*/
-
-/*for (int i=0;i<n;i++)
-    Console.WriteLine(i);*/
+// Állandó / konstans érték
+// const int n = 100;
 
 /*
-// Tomb merete
-const int nSzavak = 10; 
+// Valós tipusú változó deklarálása
+double a = 3.14;
+double b = 2.71;
 
-// Szavak tomb deklaracio
-string[] szavak = new string[nSzavak] {"egy","ketto","harom","negy","ot","hat","het","nyolc","kilenc","tiz"};
+// Egész típusú változónak nem lehet tört értéket adni.
+// k = 2.71;
 
-// Kiiratas
-for (int i = 0; i < nSzavak;i++)
-    Console.WriteLine(szavak[i]);
+Console.WriteLine("a = " + a.ToString());
+Console.WriteLine("b = " + b);
+Console.WriteLine("a + b = " + (a + b));
+Console.WriteLine("a - b = " + (a - b));
+Console.WriteLine("b - a = " + (b - a));
+Console.WriteLine("a * b = " + a * b);
+
+// Egy változónevet, egy namespace-ben egyszer lehet használni
+// int a = 2;
 */
 
 /*
-// Elso 100 szam kiiratasa ciklussal
-const int n = 100;
+// Ezt az elemet íratjuk ki
+const int n = 4;
 
-for (int i = 1; i <= n; i++)
-    Console.WriteLine(i.ToString());
+// Karakter típusú változó deklarálása
+char c = 'a';
+// Szöveg típusú változó deklarálása
+string s = "szöveg";
+// Konstans szöveg típusú változó deklarálása
+const string t = "másik";
+
+// Konstant változót nem lehet felülírtni
+//t = "egyik";
+
+// Karakter típusú változó kiíratása
+Console.WriteLine("Karakter típusú változó: " + c);
+// Szöveg típusú változó kiíratása
+Console.WriteLine("Szöveg típusú változó: " + s);
+// Szöveg típusú változó egy elemének kiíratása
+Console.WriteLine("Az " + s + " szöveges típusú változó " + n + ". elme: " + s[n]);
+// Szöveg típusú változók konkatenációjának / összefűzésének kiíratása
+Console.WriteLine("Szöveges változók összefűzése: " + s + " " + t);
+// Szöveg és karakter típusú változók konkatenációjának / összefűzésének kiíratása
+Console.WriteLine("Szöves és karakter változók összefűzése: " + s + " " + c);
 */
 
 /*
+// Logikai (Boolean) változó. Értéke true / false
+bool A = true;
+// Logikai (Boolean) konstans változó. Értéke true / false és nem változtatható meg.
+const bool B = true;
+
+// Logikai változó kiiratása
+Console.WriteLine("A = " + A);
+Console.WriteLine("B = " + B);
+*/
+
+/*
+ * AND / ÉS művelet
+ * A | B | A AND B
+ * ================
+ * n | n | n
+ * n | i | n
+ * i | n | n
+ * i | i | i
+ */
+
+// Példa AND műveletre
+//Console.WriteLine("A AND B =" + (A && B));
+
+/*
+ * OR / VAGY művelet
+ * A | B | A OR B
+ * ================
+ * n | n | n
+ * n | i | i
+ * i | n | i
+ * i | i | i
+ */
+
+// Példa OR műveletre
+//Console.WriteLine("A OR B = " + (A || B));
+
+/*
+ * XOR / KIZÁRÓ VAGY művelet
+ * A | B | A XOR B
+ * ================
+ * n | n | n
+ * n | i | i
+ * i | n | i
+ * i | i | n
+ */
+
+// Példa XOR műveletre
+//Console.WriteLine("A XOR B = " + (A ^ B));
+
+/*
+ * Negáció művelet
+ * A | NOT B
+ * ================
+ * n | i
+ * i | n
+ *
+ */
+
+// Példa NOT műveletre
+//Console.WriteLine("NOT A = " + !A);
+
+
+// Egész típusú változóban nem lehet szöveget rakni
+//int a = "Hello";
+
+/*
+ * Művelet: speciális függvény
  * 
-// Az elso n szam paros, paratlan és 13-mal oszthato számainak összege
-const int n = 100;
+ * + : R x R -> R, ahol R a valós számok halmaza
+ * 
+ * pl. 2.1 + 3.3 = 5.4
+ * 
+ */
 
-// Összeg
-int s = 0;
+/*
+// Két egész szám
+int a = 4;
+int b = 17;
 
-for (int i = 0; i <= n; i++)
+// Példa műveletre
+int c = a + b;
+int d = a * b;
+int e = a - b;
+// Típus konverzió
+int f = (int)((double)a / (double)b);
+// Modulo / oszthatóság
+int g = b % a;
+// Páros / páratlan számok
+int h = a % 2;
+int i = b % 2;
+
+// Eredmények kiírása
+Console.WriteLine("a = " + a);
+Console.WriteLine("b = " + b);
+Console.WriteLine("c = a + b = " + c);
+Console.WriteLine("d = a * b = " + d);
+Console.WriteLine("e = a - b = " + e);
+Console.WriteLine("f = a / b = " + f);
+Console.WriteLine("g = b mod a = " + g);
+Console.WriteLine("h = a mod 2 = " + h);
+Console.WriteLine("i = b mod 2 = " + i);
+*/
+
+// Példa elágazásra. HA ((a mod 2) == 0), AKKOR a páros szém
+//if (a % 2 == 0)
+//    Console.WriteLine("A(z) " + a + " páros szám.");
+
+/*
+if (a % 2 == 0)
 {
-    // Páros számok összege
-    //if ((i % 2) == 0)
-    // Páratlan számok összege
-    // if ((i % 2) == 1)
-    // 13-mal osztható számok összge
-    if ((i % 13) == 0)
+    Console.WriteLine("A(z) " + a + " páros szám.");
+    if (a % 3 == 0)
     {
-        s = s + i;
+        Console.WriteLine("A(z) " + a + " 3-mal osztható szám.");
+
+    }
+    else
+    {
+        Console.WriteLine("A(z) " + a + " 3-mal nem osztható szám.");
     };
+}
+else
+{
+    Console.WriteLine("A(z) " + a + " páratlan szám.");
 };
 
-// Eredmeny kiiratasa
-Console.WriteLine(s);
-*/
-
-// A while ciklus
-
-const int n = 100;
-
-int i = 0;
-
-while (i < n)
+if (b % 2 == 0)
 {
-    i++;
-    Console.WriteLine(i.ToString());
+    Console.WriteLine("A(z) " + b + " páros szám.");
+} 
+else
+{
+    Console.WriteLine("A(z) " + b + " páratlan szám.");
+};
+
+
+// Relációs operátorok
+if (a == b)
+{
+    Console.WriteLine("A(z) " + a + " kisebb a(z) " + b + "-nél.");
 }
 
-Console.WriteLine("While ciklus vége.");
+
+// Relációs operátorok
+Console.WriteLine("A(z) " + a + " == a(z) " + b + "-nél: " + (a == b));
+Console.WriteLine("A(z) " + a + " < a(z) " + b + "-nél: " + (a < b));
+Console.WriteLine("A(z) " + a + " > a(z) " + b + "-nél: " + (a > b));
+Console.WriteLine("A(z) " + a + " <= a(z) " + b + "-nél: " + (a <= b));
+Console.WriteLine("A(z) " + a + " >= a(z) " + b + "-nél: " + (a >= b));
+
+// Értéket add, ha csak = van. Ne hazsnálják! Gyakori hiba. 
+Console.WriteLine("A(z) " + a + " = a(z) " + b + "-nél: " + (a = b));
+*/
 
 /*
-// A do-while ciklus
+// Logikai operátorok
+bool a = true;
+bool b = false;
 
-const int n = 100;
+Console.WriteLine("A(z) a ÉS b állítás: " + (a && b));
 
-int i = 0;
-
-do
+if (a && b)
 {
-    i++;
-    Console.WriteLine(i.ToString());
+    Console.WriteLine("Igaz.");
 }
-while (i < n);
+else
+{
+    Console.WriteLine("Hamis.");
+}
 
+Console.WriteLine("A(z) a VAGY b állítás: " + (a || b));
 
-Console.WriteLine("A do-while ciklus vége.");
+if (a || b)
+{
+    Console.WriteLine("Igaz.");
+}
+else
+{
+    Console.WriteLine("Hamis.");
+}
+
+Console.WriteLine("A(z) a XOR / kizáró VAGY b állítás: " + (a ^ b));
+
+if (a ^ b)
+{
+    Console.WriteLine("Igaz.");
+}
+else
+{
+    Console.WriteLine("Hamis.");
+}
+
+Console.WriteLine("A(z) a NOT b állítás: " + (!b));
+
+if (!b)
+{
+    Console.WriteLine("Igaz.");
+}
+else
+{
+    Console.WriteLine("Hamis.");
+}
 */
 
+// Rövidító operátorok
+int i = 2;
 
+/*Console.WriteLine(i++);
+Console.WriteLine(i);*/
+
+int j = 0;
+// j = j + i;
+j += i;
+// j = j * 3;
+j *= 3;
+Console.WriteLine(j);
