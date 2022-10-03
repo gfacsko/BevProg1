@@ -344,6 +344,7 @@ for (int i = 1; i <= N; i++)
 //Console.WriteLine("i = " + i);
 */
 
+/*
 // Konstans, a ciklushoz használjuk
 const int N = 10;
 // Tömb deklarációja
@@ -354,3 +355,235 @@ for (int i = 0; i < N; i++)
 {
     Console.WriteLine(szavak[i]);
 }
+*/
+
+/*
+// A while cikus
+// Elemek száma
+const int N = 100;
+int i = 1;
+
+while (i <= N)
+{
+    Console.WriteLine(i);
+    i++;
+}
+Console.WriteLine(i);
+*/
+
+/*
+// A do-while cikus
+// Elemek száma
+const int N = 100;
+int i = 1;
+
+do
+{
+    Console.WriteLine(i);
+    i++;
+} while (i <= N);
+
+Console.WriteLine(i);
+*/
+
+
+/*
+// Adatbevitel
+string line = "";
+int m = 0;
+
+
+// Bekérem a szöveget
+Console.Write("Kérem az egész számot! ");
+line = Console.ReadLine();
+
+// Szöveget számmá alakít
+m = Convert.ToInt32(line);
+
+// Kiíratás
+Console.WriteLine(m * 2);
+*/
+
+/*
+// Másodfokú egyeletet megoldó program
+string line = "";
+
+// Állandók bekérése
+Console.WriteLine("A másodfokú egyelet általános alakja: a x^2 + b x + c = 0 ");
+// a állandó
+Console.Write("a = "); 
+line =  Console.ReadLine();
+double a = Convert.ToDouble(line);
+// b állandó
+Console.Write("b = ");
+line = Console.ReadLine();
+double b = Convert.ToDouble(line);
+// c állandó
+Console.Write("c = ");
+line = Console.ReadLine();
+double c = Convert.ToDouble(line);
+
+// Ellenőrzés
+Console.WriteLine("A megadott egyenlet: " + a + " x^2 + " + b + " x + " + c);
+
+// Diszkrimináns
+double d = Math.Pow(b, 2) - 4 * a * c;
+Console.WriteLine("A diszkrimináns: " + d);
+
+
+// ha D > 0, akkor két megoldás van
+if (d > 0)
+{
+Console.WriteLine("D > 0, az egyenletnek így két megoldása van.");
+double x1 = (-1 * b - Math.Sqrt(d)) / (2 * a);
+double x2 = (-1 * b + Math.Sqrt(d)) / (2 * a);
+Console.WriteLine("Az egyenlet megoldásai: x1 = " + x1 + " x2 = " + x2);
+}
+
+// ha D = 0, akkor csak egy megoldás van
+if (d == 0)
+{
+Console.WriteLine("D = 0, az egyenletnek így csak egy megoldása van.");
+double x = (-1 * b) / (2 * a);
+Console.WriteLine("Az egyenlet megoldása: x = " + x);
+}
+
+// ha D < 0, akkor nincs megoldás a _valós számok körében_.
+if (d < 0)
+{
+Console.WriteLine("Az egyenletnek nincsen megoldása a valós számok körében.");
+}
+
+switch (d)
+{
+case > 0:
+    Console.WriteLine("D > 0, az egyenletnek így két megoldása van.");
+    double x1 = (-1 * b - Math.Sqrt(d)) / (2 * a);
+    double x2 = (-1 * b + Math.Sqrt(d)) / (2 * a);
+    Console.WriteLine("Az egyenlet megoldásai: x1 = " + x1 + " x2 = " + x2);
+    break;
+case < 0:
+    Console.WriteLine("Az egyenletnek nincsen megoldása a valós számok körében.");       
+    break;
+default:
+    Console.WriteLine("D = 0, az egyenletnek így csak egy megoldása van.");
+    double x = (-1 * b) / (2 * a);
+    Console.WriteLine("Az egyenlet megoldása: x = " + x);
+    break;
+}
+*/
+
+/*
+// Példa goto parancsra
+Console.WriteLine("Első sor");
+
+// Címke / label a goto prancsra
+nehasznald:
+    Console.WriteLine("Példa a goto parancsra.");
+
+// Tiltott parancs
+goto nehasznald;
+
+// Ide nem jut el
+Console.WriteLine("Utolsó sor");
+*/
+
+/*
+// Számológép: bekér kér számot, bekér egy műveleti jelet és elvégzi a műveletet
+// Segédváltozó
+string line = "";
+
+// Bekér egy számot
+Console.WriteLine("Kérek két számot:");
+Console.Write("a = ");
+line = Console.ReadLine();
+// Valós számmá alakítja
+double a = Convert.ToDouble(line);
+
+// Bekér még egy számot
+Console.Write("b = ");
+line = Console.ReadLine();
+// Valós számmá alakítja
+double b = Convert.ToDouble(line);
+
+// Bekér egy műveleti jelet
+Console.Write("Milyen műveletet végezzek (+, -, *, /, %)? ");
+// Elég egy karakter
+line = Console.ReadLine();
+// Egy string -> char converzió
+char m = Convert.ToChar(line);
+
+switch (m)
+{
+    case '+':
+        Console.WriteLine(a + " " + line + " " + b + " = " + (a + b));
+        break;
+    case '-':
+        Console.WriteLine(a + " " + line + " " + b + " = " + (a - b));
+        break;
+    case '*':
+        Console.WriteLine(a + " " + line + " " + b + " = " + (a * b));
+        break;
+    case '/':
+        Console.WriteLine(a + " " + line + " " + b + " = " + (a / b));
+        break;
+    case '%':
+        Console.WriteLine(a + " " + line + " " + b + " = " + (a % b));
+        break;
+    default:
+        Console.WriteLine("Nem tudom a parancsot értelmezni.");
+        break;
+}
+*/
+
+/*
+// Művelet eredménye
+double result = 0.0;
+
+switch (m)
+{    
+    case '+':
+        result = a + b;
+        break;
+    case '-':
+        result = a - b;
+        break;
+    case '*':
+        result = a * b;
+        break;  
+    case '/':
+        result = a / b;
+        break;
+    case '%':
+        result = a % b;       
+        break;
+    default:
+        Console.WriteLine("Nem tudom a parancsot értelmezni.");
+        break;
+}
+
+if (result != 0.0)
+    Console.WriteLine(a + " " + line + " " + b + " = " + result);
+*/
+
+Console.WriteLine("Teszt");
+
+// Csipog egyet
+Console.Beep();
+// Háttér szine
+Console.BackgroundColor = ConsoleColor.DarkBlue;
+// Szöveg szine
+Console.ForegroundColor = ConsoleColor.Red;
+// Képernyőtörlés
+Console.Clear();
+// Törli színbeállításokat
+Console.ResetColor();
+Console.WriteLine("Teszt2");
+// Kiírja az ablak címét
+Console.WriteLine(Console.Title);
+// Az ablak magassága
+Console.WriteLine("Az ablak magassága: " +Console.WindowHeight);
+// Az abklak szélessége
+Console.WriteLine("Az ablak szélessége: " + Console.WindowWidth);
+
+
