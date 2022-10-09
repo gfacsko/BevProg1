@@ -284,15 +284,234 @@ else
 }
 */
 
+
+/*
 // Rövidító operátorok
 int i = 2;
 
-/*Console.WriteLine(i++);
-Console.WriteLine(i);*/
+Console.WriteLine(i++);
+Console.WriteLine(i);
 
+// Rövidítések
 int j = 0;
 // j = j + i;
 j += i;
 // j = j * 3;
 j *= 3;
 Console.WriteLine(j);
+*/
+
+/*
+// Példa ciklusra
+// Maximális érték
+const int N = 100;
+
+// A for ciklus
+for (int i = 0; i < N; i++)
+{
+    Console.WriteLine("i = " + i);
+}
+
+// A ciklus változó nem létezik a cikluson kívül
+//double i = 137;
+
+//
+*/
+
+/*
+// Példa tíz szó kiiratása
+const int Nszavak = 10;
+
+//string[] szavak = new string[Nszavak];
+string[] szavak = new string[] { "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz" };
+
+// Kiírom az eredményt
+for (int i = 0; i < Nszavak; i++)
+{
+    Console.WriteLine((i + 1) + ". szó: " + szavak[i]);
+}
+*/
+
+/*
+// Példa számok kiiratására 
+// A tömb deklarálásánál adom meg az értékeket
+int[] szamok = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+
+// Kiírom a tömb értékeit
+for (int i = 0; i < szamok.Length; i++)
+{ 
+    Console.WriteLine((i+1) + ". szám: " + szamok[i]);
+}
+*/
+
+/*
+// Példa számok kiiratására 
+// A tömb értékeit később adom meg
+
+// Megadom a tömb hosszát
+const int Nszamok = 20;
+// Lefoglalom a tömb helyét
+int[] szamok = new int[Nszamok];
+
+// Feltöltöm a tömböt ciklussal
+for (int i = 0; i < Nszamok; i++)
+{
+    szamok[i] = (i + 1) * 10;
+}
+
+// Kiírom a tömb értékeit
+for (int i = 0; i < Nszamok; i++)
+{
+    Console.WriteLine((i + 1) + ". szám: " + szamok[i]);
+}
+*/
+
+/*
+// Első 100 szám páros, páratlan és 13-mal osztható számainak összege
+const int Nszamok = 100;
+
+// Az összeg tárolása
+int sum = 0;
+
+for (int i = 1; i <= Nszamok; i++)
+{
+    //if ((i % 2) == 0) // Páros számok
+    //if ((i % 2) == 1) // Páratlan számok
+    if ((i % 13) == 0) // 13-mal osztható számok
+    {
+        sum = sum + i;
+    }
+}
+//Console.WriteLine("Az első " + Nszamok + " páros szám összege: " + sum);
+//Console.WriteLine("Az első " + Nszamok + " páratlan szám összege: " + sum);
+Console.WriteLine("Az első " + Nszamok + " 13-mal osztható szám összege: " + sum);
+*/
+
+/*
+// Példa while-do (elöltesztelő) ciklusra
+// 20 szám kiíratása
+const int n = 20;
+
+// Ciklusváltozó
+int i = 1;
+
+// Elöltesztető ciklus
+while (i <= n)
+{
+    // Kiírom számokat
+    Console.WriteLine(i);
+    // Növelni kell a ciklusváltozó értékét (vagy végtelen ciklusba kerülök)
+    i = i + 1;
+}
+*/
+
+/*
+// Példa do-while (hátultesztelő) ciklusra
+// 20 szám kiíratása
+const int n = 20;
+
+// Ciklusváltozó
+int i = 1;
+
+// Hátultesztető ciklus
+do
+{
+    // Kiírom számokat
+    Console.WriteLine(i);
+    // Növelni kell a ciklusváltozó értékét (vagy végtelen ciklusba kerülök)
+    i = i + 1;
+} while (i <= n);
+*/
+
+
+/*
+// Számok összege while-do ciklussal
+const int n = 100;
+
+// Ciklusváltozó
+int i = 1;
+
+// A számok összege
+int sum = 0;
+
+// Elöltesztető ciklus
+while (i <= n)
+{
+    // Összeadom a számokat
+    sum = sum + i;
+    // Növelni kell a ciklusváltozó értékét (vagy végtelen ciklusba kerülök)
+    i = i + 1;
+}
+// Kiírom számokat
+Console.WriteLine("Az első " + n + " szám összege: " + sum);
+*/
+
+/*
+// Egész típusú változó
+int i = 10;
+// Lebegőpontos (valós) typusú változó
+double r = 13.1;
+// Egész típusú változóba lebegőpontos változót típuskényszerítéssel helyezhetünk
+int osszeg = i + (int)r;
+
+// Ugrik a "vege" cimkére
+goto vege;
+
+// Eredmények kiírás + egy extra típuskényszerítés
+Console.WriteLine(i + " + " + (int)r + " = " + osszeg);
+
+vege:
+Console.WriteLine("The End");
+*/
+
+// Másodfokú egyenlet megoldása
+Console.WriteLine("A másodfokú egyenlet általános alakja:");
+Console.WriteLine("a * x^2 + b * x + c = 0");
+
+// Segéd string változó
+string line = "";
+
+// Bekérem az "a" változót
+Console.Write("a = ");
+line = Console.ReadLine();
+double a = Convert.ToDouble(line);
+
+// Bekérem az "b" változót
+Console.Write("b = ");
+line = Console.ReadLine();
+double b = Convert.ToDouble(line);
+
+// Bekérem az "c" változót
+Console.Write("c = ");
+line = Console.ReadLine();
+double c = Convert.ToDouble(line);
+
+// Ellenőrzés
+Console.WriteLine(a + " * x^2 + " + b + " * x + " + c + " = 0");
+
+// Diszkrimináns
+//double D = b * b - 4 * a * c;
+// Math.Pow() hatványoz
+double D = Math.Pow(b, 2) - 4 * a * c;
+// A diszkrimináns értékeének kiíratása
+Console.WriteLine("A diszkrimináns értéke: " + D);
+
+// A diszkrimináns értéke szerinti megoldások megadása
+if (D > 0)
+{
+    // Gyökvonás a Math.Sqrt()
+    double x1 = (-1 * b - Math.Sqrt(D)) / (2 * a);
+    double x2 = (-1 * b + Math.Sqrt(D)) / (2 * a);
+    Console.WriteLine("Két megoldás van: x1 = " + x1 + " és x2 = " + x2);
+}
+
+if (D == 0)
+{
+    double x = (-1 * b) / (2 * a);    
+    Console.WriteLine("Egy megoldás van: x = " + x);
+}
+
+if (D < 0)
+{
+    Console.WriteLine("Nincs megoldás a valós számok halmazán.");
+}
