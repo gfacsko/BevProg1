@@ -464,6 +464,7 @@ vege:
 Console.WriteLine("The End");
 */
 
+/*
 // Másodfokú egyenlet megoldása
 Console.WriteLine("A másodfokú egyenlet általános alakja:");
 Console.WriteLine("a * x^2 + b * x + c = 0");
@@ -515,3 +516,444 @@ if (D < 0)
 {
     Console.WriteLine("Nincs megoldás a valós számok halmazán.");
 }
+*/
+
+/*
+// Számológép: bekér kér számot, bekér egy műveleti jelet és elvégzi a műveletet
+// Segédváltozó
+string line = "";
+
+// Bekér egy számot
+Console.WriteLine("Kérek két számot:");
+Console.Write("a = ");
+line = Console.ReadLine();
+// Valós számmá alakítja
+double a = Convert.ToDouble(line);
+
+// Bekér még egy számot
+Console.Write("b = ");
+line = Console.ReadLine();
+// Valós számmá alakítja
+double b = Convert.ToDouble(line);
+
+// Bekér egy műveleti jelet
+Console.Write("Milyen műveletet végezzek (+, -, *, /, %)? ");
+// Elég egy karakter
+line = Console.ReadLine();
+// Egy string -> char converzió
+try
+{
+    char m = Convert.ToChar(line);
+
+    switch (m)
+    {
+        case '+':
+            Console.WriteLine(a + " " + line + " " + b + " = " + (a + b));
+            break;
+        case '-':
+            Console.WriteLine(a + " " + line + " " + b + " = " + (a - b));
+            break;
+        case '*':
+            Console.WriteLine(a + " " + line + " " + b + " = " + (a * b));
+            break;
+        case '/':
+            Console.WriteLine(a + " " + line + " " + b + " = " + (a / b));
+            break;
+        case '%':
+            Console.WriteLine(a + " " + line + " " + b + " = " + (a % b));
+            break;
+        default:
+            Console.WriteLine("Nem tudom a parancsot értelmezni.");
+            break;
+    }
+}
+catch (FormatException ex)
+{
+    Console.WriteLine("Valami hiba történt: {0}", ex.Message);
+}
+*/
+
+/*
+// Példaprogram hibakezelésre ------------------------------------
+// A tömb elemeinek száma
+const int N = 5;
+
+// Tömb deklaráció
+int[] array = new int[N];
+
+// Elemek bekérése
+for (int i = 0; i < N; i++)
+{
+    // Segédváltozó
+    string line = "";
+*/
+/*
+// Hibakezelés do-while ciklussal
+do
+{
+    Console.Write("Kérek egy nemnegatív számot! " + (i + 1) + ". szám: ");
+    // Bekérés
+    line = Console.ReadLine();
+    // Konverzió egészszámmá
+    array[i] = Convert.ToInt16(line);
+    // Csak nemnegatív számot fogadhat el a kód
+} while (array[i] < 0);
+*/
+/*
+    // Hibakezelés while ciklussal 
+    Console.Write("Kérek egy nemnegatív számot! " + (i + 1) + ". szám: ");
+    // Bekérés
+    line = Console.ReadLine();
+    // Konverzió egészszámmá
+    array[i] = Convert.ToInt16(line);
+    // Csak nemnegatív számot fogadhat el a kód
+    while (array[i] < 0)
+    {
+        Console.WriteLine("Ez a szám negatív");
+        Console.Write("Kérek egy nemnegatív számot! ");
+        // Bekérés
+        line = Console.ReadLine();
+        // Konverzió egészszámmá
+        array[i] = Convert.ToInt16(line);
+    }
+}
+
+// A bekért adatok kiírása
+Console.Write("A bekért számok: ");
+for (int i = 0; i < N; i++)
+{
+    Console.Write(" " + array[i]);
+}
+Console.WriteLine(" ");
+Console.WriteLine("END OF LINE");
+*/
+
+/*
+Console.WriteLine("Teszt"); // ------------------------------------
+
+// Csipog egyet
+//Console.Beep();
+// Háttér szine
+Console.BackgroundColor = ConsoleColor.DarkBlue;
+// Szöveg szine
+Console.ForegroundColor = ConsoleColor.Red;
+
+// Képernyőtörlés
+Console.Clear();
+
+
+// Törli színbeállításokat
+Console.ResetColor();
+Console.WriteLine("Teszt2");
+Console.Clear();
+
+// Kiírja az ablak címét
+Console.WriteLine(Console.Title);
+// Az ablak magassága
+Console.WriteLine("Az ablak magassága: " +Console.WindowHeight);
+// Az abklak szélessége
+Console.WriteLine("Az ablak szélessége: " + Console.WindowWidth);
+*/
+
+
+/*
+// Egymásba ágyazott ciklusok ------------------------------------
+const int N = 3;
+const int M = 5;
+
+
+// Kiírjuk a számok szorzatát 
+Console.WriteLine("A számok szorzata");
+*/
+/*int i = 0;
+int j = 0;*/
+/*
+for(int i=1;i<=N;i++)
+{
+    for(int j=1;j<=M;j++)
+    {
+        Console.Write(i + " * " + j + " = " + i*j + "     ");
+   /*     if (i == 2 && j == 3)
+            goto netedd;*/
+/*   }
+   Console.WriteLine("");
+}
+*/
+/*
+ * netedd:
+    Console.WriteLine(i + " " + j);
+*/
+
+/*
+// Véletlenszám ---------------------------------------------------------------------
+// Tömb elemeinek száma
+const int N = 100;
+// Tömb
+int[] array = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése
+for (int i = 0; i < N; i++)
+{
+    array[i] = rnd.Next(0, 255);
+}
+
+// A tömb elemeinek kiiratása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+{
+    // új sor
+    if (i == 0)
+        Console.WriteLine("");
+    // Elme kiirása
+    Console.Write(array[i] + " ");
+}
+*/
+
+/*
+// -----------------------------------------------------------------
+// Véletlen számokkal feltöltötte tömb elemeinek maximuma / minimuma
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+// A tömb maximális / minimális elemének és az indexének a meghatározása
+int  MIN = 0; // MAX = 0; // 
+int  MINERT = X[0]; // MAXERT = X[0]; // 
+for (int i = 1; i < N; i++)
+{
+    // Maximum keresés
+    if (MAXERT < X[i])
+    {
+        MAX = i;
+        MAXERT = X[i];
+    }
+}
+
+// Új sorban kezdi a kiírást
+Console.WriteLine("\nA tömb maximális eleme: " + MAXERT);
+Console.WriteLine("A tömb maximális elemének indexe: " + MAX);
+
+    
+    // Minimum keresés
+    if (MINERT > X[i])
+    {
+        MIN = i;
+        MINERT = X[i];
+    }
+}
+Console.WriteLine("\nA tömb minimális eleme: " + MINERT);
+Console.WriteLine("A tömb minimális elemének indexe: " + MIN);*/
+
+/*
+// Megszámolás tétele -----------------------------------------------
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+// Feltétel (T): 128-nál nagyobb
+// A megfelelő elemek darabszáma
+int DB = 0;
+for (int i = 0; i < N; i++)
+{
+    if (X[i] > 128)
+        DB = DB + 1;
+}
+Console.WriteLine("\nA 128-nál nagyobb elemek száma a tömbben: " + DB);
+*/
+
+
+/*
+// Kiválogatás tétele -----------------------------------------------
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+*/
+// Feltétel (T): 128-nál nagyobb
+/*
+// A megfelelő elemek indexének kiírása
+for (int i = 0; i < N; i++)
+{
+    if (X[i] > 128)
+    {
+        Console.WriteLine("\nA 128-nál nagyobb elem indexe a tömbben: " + i);
+    }
+}
+*/
+/*
+// A megfelelő elemek indexének kigyűjtése egy tömbbe
+int tIndex = 0; // A tömb indexelését külön kell kezelni
+int[] tArray = new int[N];
+
+for (int i = 0; i < N; i++)
+{
+    // A megfelelő elemek indexét eltárolom
+    if (X[i] > 128)
+    {
+        tArray[tIndex] = i;
+        tIndex = tIndex + 1;
+    }
+}
+
+// Az eredmény kiírása
+Console.WriteLine("\nA megfelelő elemek indexei: ");
+for (int i = 0; i < tIndex; i++)
+{
+    Console.Write(tArray[i] + " ");
+}
+*/
+
+/*
+// Egyszerű cserés rendezés ---------------------------------------------
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+
+// A rendezés
+for (int i = 0; i < N - 1; i++)
+{
+    for (int j = i + 1; j < N; j++)
+    { 
+        if (X[i] > X[j])
+        {
+            // Segédváltozó a cseréhez
+            int y = X[i];
+            X[i] = X[j];
+            X[j] = y;
+        }
+    }
+}
+
+// A rendezett tömb kiírása
+Console.WriteLine("\nA rendezett tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+*/
+
+/*
+// Buborék rendezés ---------------------------------------------
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+
+// A rendezés
+for (int i = N-1; i > 1; i--)
+{
+    for (int j = 0; j < i - 1; j++)
+    {
+        if (X[j] > X[j+1])
+        {
+            // Segédváltozó a cseréhez
+            int y = X[j];
+            X[j] = X[j+1];
+            X[j+1] = y;
+        }
+    }
+}
+
+
+
+// A rendezett tömb kiírása
+Console.WriteLine("\nA rendezett tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+*/
+
+// Teszt -------------------------------------------------
+// Véletlen számok generálása
+// Tömb elemeinek száma
+const int N = 10;
+// Tömb
+int[] X = new int[N];
+// Véletlen szám
+Random rnd = new Random();
+// Tömb feltöltése véletlen számokkal
+for (int i = 0; i < N; i++)
+    X[i] = rnd.Next(0, 255);
+
+// A tömb elemeinek a kiírása
+Console.WriteLine("A tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+// Tömb rendezése
+Array.Sort(X);
+
+// A tömb sorrendjének megfordítása
+Array.Reverse(X);
+
+// A módosított tömb kiírása
+Console.WriteLine("\nA módosított tömb elemei: ");
+for (int i = 0; i < N; i++)
+    Console.Write(X[i] + " ");
+
+// Adott elem megtalálása
+Console.WriteLine("\nAdott elem megtalálása: " + X[3] + " " + Array.IndexOf(X, X[3]));
+// Tömb minimuma
+Console.WriteLine("A tömb minimuma: " + X.Min());
+// Tömb maximuma
+Console.WriteLine("A tömb maximuma: " + X.Max());
+// Tömb elemeinek összege
+Console.WriteLine("A tömb elemeinek összege: " + X.Sum());
