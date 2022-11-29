@@ -1,145 +1,193 @@
-﻿// See https://aka.ms/new-console-template for more information
-//string line;
-
-//Console.WriteLine("Szia, Vilag!"); // kiírás konzol képernyőre (a Console oszály statikus WriteLine metódusa)
-
-/*line = Console.ReadLine(); // Sor beolvasása
-Console.WriteLine(line);  // A beolvasott sor kiírása
-
-Console.Write(line);
-
-Console.WriteLine("Nyomj le egy billentyűt!");
-Console.ReadKey();*/
+﻿/*
+ * Bevezetés a programozásba példaprogramok C#-ban
+ * MicroSoft Visual Studio fejlesztőkörnyezettel
+ * 
+ * Developed by Gabor FACSKO (facsko.gabor@uni-milton.hu)
+ * Milton Friedman University, Budapest, Hungary, 2022
+ * */
 
 /*
-int n = 0;
-byte b = 0;
-string str = "szoveg";
-char c = 'c';
-bool l = false;
+int a = 2;
+int b = 3;
 
-Console.WriteLine(n);
-Console.WriteLine(b);
+string str = (a < b) ? "b" : "a";
 
 Console.WriteLine(str);
-Console.WriteLine(str[3]); // A szamozas 0-tol kezdodik.
-Console.WriteLine(c);
 
-Console.WriteLine(l);
+//   valtozo = (logikai operátor) ? 
 
-Console.WriteLine(sizeof(int)); // Wikipédia
+// Ennek a rövidítése:
 
-int j, k, m;
+string str = "";
 
-j = 1;
-k = 2;
-//m = 3;
+if (a < b)
+    str = "b";
+else
+    str = "a";
 
-Console.WriteLine(j);
-Console.WriteLine(k);
-//Console.WriteLine(m);
-
-//float j = 1.2;
-
-*/
-
-/*string str = "vege";
-
-Console.WriteLine("eleje, " + str);*/
-
-//int n = "szoveg";
-//int n = 1.4;
-
-//int n = 137;
-
-/*Console.WriteLine(n % 42);
-
-Console.WriteLine(n == 43);
-Console.WriteLine(n > 43);
-Console.WriteLine(n < 43);
-Console.WriteLine(n <= 43);
-
-if (n > 42 && n == 137)
-    Console.WriteLine("Nagyobb");*/
-
-/*for (int i=0;i<n;i++)
-    Console.WriteLine(i);*/
-
-/*
-// Tomb merete
-const int nSzavak = 10; 
-
-// Szavak tomb deklaracio
-string[] szavak = new string[nSzavak] {"egy","ketto","harom","negy","ot","hat","het","nyolc","kilenc","tiz"};
-
-// Kiiratas
-for (int i = 0; i < nSzavak;i++)
-    Console.WriteLine(szavak[i]);
-*/
-
-/*
-// Elso 100 szam kiiratasa ciklussal
-const int n = 100;
-
-for (int i = 1; i <= n; i++)
-    Console.WriteLine(i.ToString());
-*/
-
-/*
- * 
-// Az elso n szam paros, paratlan és 13-mal oszthato számainak összege
-const int n = 100;
-
-// Összeg
-int s = 0;
-
-for (int i = 0; i <= n; i++)
-{
-    // Páros számok összege
-    //if ((i % 2) == 0)
-    // Páratlan számok összege
-    // if ((i % 2) == 1)
-    // 13-mal osztható számok összge
-    if ((i % 13) == 0)
-    {
-        s = s + i;
-    };
-};
-
-// Eredmeny kiiratasa
-Console.WriteLine(s);
-*/
-
-// A while ciklus
-
-const int n = 100;
+// -------
 
 int i = 0;
 
-while (i < n)
-{
-    i++;
-    Console.WriteLine(i.ToString());
-}
+i = i + 1;
 
-Console.WriteLine("While ciklus vége.");
+i += 1;
+
+i++;
+
+++i;
+
+*/
 
 /*
-// A do-while ciklus
+// Példák listákra: számok
+List<Int16> list = new List<Int16>();
+list.Add(42);
+list.Add(137);
+list.Add(255);
 
-const int n = 100;
+// Példák listákra: szöveg
+List<string> authors = new List<string>(5);
 
-int i = 0;
+authors.Add("Facskó Gábor");
+authors.Add("Lőrincz L. László");
+authors.Add("Nemere István");
+authors.Add("Zsoldos Péter");
+authors.Add("Arthur C. Clarke");
+authors.Add("Isaac Asimov");
 
-do
+// Initializálás tömbbel
+string[] animals = { "Cow", "Camel", "Elephant" };
+List<string> animalsList = new List<string>(animals);
+*/
+
+// Listák kiírása - barbár megoldás (new így csinálják) ------------
+/*
+// Az ArrayListet szöveggé alakítom
+string str = string.Join(", ", list.ToArray());
+
+// Kiíratom a szöveget
+Console.WriteLine(str);*/
+
+// Listák kiírása -----------------------------------
+
+/*
+foreach (int a in list)
 {
-    i++;
-    Console.WriteLine(i.ToString());
+    Console.WriteLine(a);
 }
-while (i < n);
+*/
+/*
+// Eredeti lista
+Console.WriteLine("Az eredeti lista:");
+foreach (string a in authors)
+    Console.WriteLine(a);
+*/
+/*Console.WriteLine("Count: " + authors.Count);
+Console.WriteLine("Capacity: " + authors.Capacity);*/
 
+// Beszúrok egy elemet a 3 (negyedik) helyre
+//authors.Insert(3, "Bill Gates");
 
-Console.WriteLine("A do-while ciklus vége.");
+/*string[] newAuthors = { "New Author1", "New Author2", "New Author3" };
+authors.InsertRange(2, newAuthors);*/
+
+// Egy elem törlése
+//authors.Remove("New Author1");
+
+// Egy adott helyen lévő elem törlése
+//authors.RemoveAt(2);
+
+// Egy adott helyről több elem törlése
+//authors.RemoveRange(2, 2);
+// Az egész lista törlése
+//authors.Clear();
+
+/*
+// Keresés a listában
+int idx = authors.IndexOf("Nemere István");
+if (idx >= 0)
+    Console.WriteLine($"A listában az elem az {idx}. helyen található");
+else
+    Console.WriteLine("Az elem nincs a listában");
+
+// Keresés, de hibakezelés nélkül
+Console.WriteLine(authors.IndexOf("Nemere István", 2));
+*/
+
+/*
+// Rendezi az elemeket
+authors.Sort();
+
+// Megfordítja az elemeket
+authors.Reverse();*/
+/*
+// Létrehozok egy második listát
+List<string> secondAuthors = new List<string>();
+secondAuthors.Add("Kovacs Laszlo");
+secondAuthors.Add("Tuk Peregin");
+secondAuthors.Add("Gandalf, the Grey");
+
+// Kiírom a második listát
+Console.WriteLine("\nA második lista:");
+foreach (string a in secondAuthors)
+    Console.WriteLine(a);
+
+// Hozzáadom a második listát az első litához
+authors.AddRange(secondAuthors);
+
+// Az új lista
+Console.WriteLine("\nA módosított lista:");
+foreach (string a in authors)
+    Console.WriteLine(a);
+
 */
 
 
+// Példa ArrayListre
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Diagnostics;
+
+ArrayList al = new ArrayList();
+
+// adding elements using ArrayList.Add() method
+al.Add(42);
+al.Add(137);
+al.Add(25.5);
+al.Add("Facskó Gábor");
+al.Add("Lőrincz L. László");
+al.Add("Nemere István");
+al.Add("Zsoldos Péter");
+al.Add("Arthur C. Clarke");
+al.Add("Isaac Asimov");
+al.Add(null);
+
+// Az ArrayList kiíratása
+Console.WriteLine("Az eredeti lista kiírása:");
+foreach (var val in al)
+    Console.WriteLine(val);
+
+// Variációk elemek eltávolítására
+//al.Remove(25.5);
+
+//al.RemoveAt(3);
+
+//al.RemoveRange(1,2);
+
+// Eltávolítok mindent
+//al.Clear();
+
+// Rendezés
+//al.Sort();
+
+// Megfordítás
+al.Reverse();
+// A módosított ArrayList kiíratása
+Console.WriteLine("\nAz módosított lista kiírása:");
+foreach (var val in al)
+    Console.WriteLine(val);
+
+Console.WriteLine("Count: " + al.Count);
+Console.WriteLine("Capacity: " + al.Capacity);
