@@ -16,11 +16,23 @@
  * d.	Valósítsa meg a rendezést és írja ki a rendezett tömböt egymás mellé
  */
 
-// A tömb hosszának bekérése
-Console.Write("Kérem adja meg a generálandó tömb hosszát! ");
-string line = Console.ReadLine();
-int nArray = Convert.ToInt16(line);
 
+// A tömb hosszának bekérése
+int nArray = -1;
+do
+{
+    Console.Write("Kérem adja meg a generálandó tömb hosszát! ");
+    string line = Console.ReadLine();
+    try
+    { 
+        nArray = Convert.ToInt16(line);
+    }
+    catch (FormatException ex)
+    {
+        // Kiírja a hibaüzenetet
+        Console.WriteLine("Valami hiba történt: " + ex.Message);
+    }
+} while (nArray < 0);
 // Tömb
 int[] array = new int[nArray];
 // Véletlen szám
@@ -49,7 +61,7 @@ Console.WriteLine("(4) Kilépés\n");
 int menu = -1;
 do
 {
-    line = Console.ReadLine();
+    string line = Console.ReadLine();
     try
     {
         // Ide lehet bármilyen sületlenséget írni (usererror), ezt kezeli a try-catch
